@@ -8,10 +8,4 @@ user_scores_sql_custom_query     SELECT preference, value FROM userpref WHERE us
 bayes_store_module               Mail::SpamAssassin::BayesStore::SQL
 bayes_sql_dsn                    DBI:mysql:spamassassin:database-container:3306
 bayes_sql_username               spamassassin
-bayes_sql_password               php_mysql_pass
-
-# Use auto-whitelist from SQL
-auto_whitelist_factory           Mail::SpamAssassin::SQLBasedAddrList
-user_awl_dsn                     DBI:mysql:spamassassin:database-container:3306
-user_awl_sql_username            spamassassin
-user_awl_sql_password            php_mysql_pass 
+bayes_sql_password               php_mysql_pass 

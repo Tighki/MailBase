@@ -58,6 +58,8 @@ services:
     volumes:
       - ./spamassassin/conf:/etc/spamassassin
       - ./spamassassin/data:/var/lib/spamassassin
+    depends_on:
+      - db
 
   # PhpMyAdmin Service
   phpmyadmin:
