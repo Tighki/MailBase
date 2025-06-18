@@ -1,8 +1,8 @@
 <?php
 
 // Learning driver
-// Используем драйвер sa_blacklist для интеграции со SpamAssassin
-$config['markasjunk_learning_driver'] = 'sa_blacklist';
+// Используем драйвер cmd_learn для интеграции со SpamAssassin
+$config['markasjunk_learning_driver'] = 'cmd_learn';
 
 // Ham mailbox
 // Mailbox messages should be moved to when they are marked as ham. null = INBOX
@@ -39,7 +39,12 @@ $config['markasjunk_move_spam'] = true;
 // Learn any message moved from the spam mailbox to the ham mailbox as ham (not just when the button is pressed)
 $config['markasjunk_move_ham'] = true;
 
-// sa_blacklist Driver options
-// ---------------------------
-// Path to SAUserPrefs config file
-$config['markasjunk_sauserprefs_config'] = '../sauserprefs/config.inc.php';
+// cmd_learn Driver options
+// ------------------------
+// The command used to learn that a message is spam
+// Команда отправляет письмо на проверку в SpamAssassin
+$config['markasjunk_spam_cmd'] = '/usr/bin/spamc -d spamassassin-container -p 783 -L spam < %f';
+
+// The command used to learn that a message is ham
+// Команда отправляет письмо на проверку в SpamAssassin как НЕ спам
+$config['markasjunk_ham_cmd'] = '/usr/bin/spamc -d spamassassin-container -p 783 -L ham < %f';
