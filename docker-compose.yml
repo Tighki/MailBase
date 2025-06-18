@@ -46,6 +46,22 @@ services:
       - web
     restart: always
 
+  # SpamAssassin Service
+  spamassassin:
+    image: instantlinux/spamassassin:3.4.6
+    container_name: spamassassin-container
+    restart: always
+    networks:
+      - web
+    ports:
+      - "783:783"
+    volumes:
+      - ./spamassassin/conf:/etc/mail/spamassassin
+      - ./spamassassin/data:/var/lib/spamassassin
+    environment:
+      - TZ=Europe/Moscow
+      - EXTRA_OPTIONS=-q -x
+
   # PhpMyAdmin Service
   phpmyadmin:
     container_name: phpmyadmin

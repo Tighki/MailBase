@@ -1,0 +1,5 @@
+# User Prefs
+user_scores_dsn                  DBI:mysql:spamassassin:database-container:3306
+user_scores_sql_password         php_mysql_pass
+user_scores_sql_username         spamassassin
+user_scores_sql_custom_query     SELECT preference, value FROM _TABLE_ WHERE username = _USERNAME_ OR username = '$GLOBAL' OR username = CONCAT('%',_DOMAIN_) ORDER BY username ASC 

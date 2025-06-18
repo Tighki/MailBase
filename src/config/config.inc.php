@@ -89,7 +89,9 @@ $config['plugins'] = [
 	 'userinfo',
 	 'emoticons',
 	 'newmail_notifier',
-	 'reconnect'];
+	 'reconnect',
+	 'sauserprefs',
+	 'markasjunk'];
 
 // the default locale setting (leave empty for auto-detection)
 // RFC1766 formatted language name like en_US, de_DE, de_CH, fr_FR, pt_BR
